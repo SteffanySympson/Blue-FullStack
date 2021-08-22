@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
 
+app.use(express.json()); 
+
 const port = 3000;
 
 const jogos = [
@@ -26,11 +28,11 @@ const msgInicio = [
 
 function randomMinMax(min, max){
     return Math.floor(Math.random()*(max - min))+min;
-}
+};
 
 function frase(num){
     return msgInicio[num];
-}
+};
 console.log(frase(randomMinMax(0,3)));
 
 //GET / HOME
@@ -46,7 +48,7 @@ jogos.forEach(function (item, indice){
 console.log (jogos.length);
 
 app.get('/', (req, res) =>{
-    res.send("Bem vindo a lista de Jogos!")
+    res.send("Bem vindo a lista de Jogos!");
 });
 
 app.get('/jogos',(req, res) =>{
