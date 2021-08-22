@@ -70,6 +70,31 @@ app.get('/jogos/:id', (req, res) =>{
     
 });
 
-app.listen(port, () =>{
-    console.info(`Servidor rodando! http://localhost:${port}/`);
+app.post('/jogos', (req, res) =>{
+    const jogo = req.body.jogo;
+    const id = jogos.length;
+    jogos.push(jogo);
+
+    res.send (`Filme add com sucesso: ${jogo}.
+    O ID do filme é ${id}`);
 });
+
+app.put('/jogos/:id', (req, res) => {
+    const id = req.params.id -1;
+    const jogo = req.body.jogos;
+    const nomeAnterior = jogos[id];
+    jogos[id] = jogo;
+    res.send(`Filme anterior ${nomeAnterior} atualizado com sucesso para ${jogo}.`);
+});
+
+app.delete('/jogos/:id', (req, res) =>{
+    const id = req.params.id -1;
+    delete jogos[id];
+    res.send('Jogo deletado com sucesso!');
+});
+
+
+app.listen(port, function(){
+    console.info(`App rodando  na porta http://localhost:${port}/`);
+});
+
