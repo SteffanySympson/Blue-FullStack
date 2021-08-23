@@ -77,7 +77,7 @@ app.post('/jogos', (req, res) =>{
     const id = jogos.length;
     jogos.push(jogo);
 
-    res.send (`Filme add com sucesso: ${jogo}.
+    res.send (`Jogo add com sucesso: ${jogo}.
     O ID do filme é ${id}`);
 });
 
@@ -86,7 +86,7 @@ app.put('/jogos/:id', (req, res) => {
     const jogo = req.body.jogos;
     const nomeAnterior = jogos[id];
     jogos[id] = jogo;
-    res.send(`Filme anterior ${nomeAnterior} atualizado com sucesso para ${jogo}.`);
+    res.send(`Jogo anterior ${nomeAnterior} atualizado com sucesso para ${jogo}.`);
 });
 
 app.delete('/jogos/:id', (req, res) =>{
