@@ -1,0 +1,13 @@
+
+a{
+    text-decoration: none;
+    color: #fff;
+}
+.bttn{
+
+    border: solid 1px rgb(203, 195, 195);
+    background-color: rgb(150, 143, 143);
+    border-radius:5%;
+    display: block;
+    padding: .5rem;
+}
