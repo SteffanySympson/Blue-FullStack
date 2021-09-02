@@ -202,4 +202,25 @@ h3{
   cursor: pointer;
 }
 
+footer{
+  background-color: #6d6027;
+}
+footer p{
+  min-height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size:1.2rem;
+}
+
+footer a{
+  text-decoration: none;
+  color: #c97705;
+  transition: ease-in-out .3s;
+}
+
+a:hover{
+  color: #ffffff;
+}
+
 
