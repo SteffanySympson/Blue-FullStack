@@ -3,12 +3,13 @@ const router = express.Router();
 const Musica = require('../models/musicas');
 
 router.post("/add", async (req, res) => {
-    await Musica.create(req.body)
-    .then(() => {
+    console.log(req.body);
+    await Musica.create(req.body).then(() => {
         res.status(200).send("Musica adicionada com sucesso");
     }).catch((err) => {
         res.status(400).send("Algo errado com a musica, tente novamente");
         console.error(err);
+        
     })
 });
 
@@ -31,6 +32,7 @@ router.get('/findById/:id', async (req, res) => {
     .catch((err) => {
         res.status(400).send("Algo errado com a musica, tente novamente");
         console.log(err);
+        
     })
 });
 
